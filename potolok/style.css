@@ -1,22 +1,31 @@
 body {
-    box-sizing: border-box;  
-    font-family: "Roboto", "Arial", sans-serif;
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  background-color: #262626;
 }
-.header {
+header {
   display: flex;
   justify-content: space-around;
+  background-color: #262626;
+  color: #fff;
+}
+.line {
+  border-bottom: 2px solid #ffffff;
 }
 .dropbtn {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 16px;
   border: none;
-  background-color: #fff;
+  background-color: #262626;
 }
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
   padding-left: 9px;   
+  padding-top: 24px;
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -24,9 +33,9 @@ body {
   position: absolute;
   background-color: #fff;
   min-width: 170px;
-  box-shadow: 0px 8px 16px 0px #fff;
+  box-shadow: 0px 8px 16px 0px #ff6633;
   z-index: 1;
-}
+} 
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
@@ -39,12 +48,72 @@ body {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #ddd;}
-
+.dropdown:hover .dropbtn {background-color: #ddd;}  
+.cards__name {
+    margin: 0 5%;
+    color: #fff;
+    font-size: 32px;
+}
+.s-card {
+    width: 140px;
+    min-height: 70px;
+    box-shadow: 1px 2px 4px rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+    text-align: center;
+    margin: 90px 0px;
+}
+.s-card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 90, 34, 0.2);
+}
+.s-card__top {
+    flex: 0 0 110px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+}
+.s-card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.s-card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+    color: #fff;
+}
+.s-card__title {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: #ffffff;
+    text-decoration: none;
+}
+.s-cards {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: repeat(auto-fill, 222px);
+    width: 100%;
+    max-width: 1600px; /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center; /* Размещаем карточку по центру */
+    column-gap: 30px; /* Отступ между колонками */
+    row-gap: 40px; /* Отступ между рядами */
+    margin: 0 auto;
+}
 .card {
     width: 235px;
     min-height: 310px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 2px 4px rgb(255, 255, 255);
     display: flex;
     flex-direction: column; /* Размещаем элементы в колонку */
     border-radius: 4px;
@@ -97,7 +166,7 @@ body {
 .card__price--discount {
     font-weight: 700;
     font-size: 19px;
-    color: #414141;
+    color: #ffffff;
     display: flex;
     flex-wrap: wrap-reverse;
     padding-top: 10px;
@@ -106,7 +175,7 @@ body {
 .card__price--discount::before {
     font-weight: 400;
     font-size: 13px;
-    color: #bfbfbf;
+    color: #ffffff;
 }
 .card__title {
     display: block;
@@ -114,21 +183,21 @@ body {
     font-weight: 400;
     font-size: 17px;
     line-height: 150%;
-    color: #414141;
+    color: #ffffff;
     text-decoration: none;
 }
 .card__title:hover {
-    color: #ff5c33;
+    color: #ffffff;
 }
 .card__add {
     display: block;
     width: 60%;
     font-size: 16px;
-    color: #70c05b;
+    color: #000000;
     padding: 10px ;
     margin-bottom: 0px;
     text-align: center;
-    border: 1px solid #70c05b;
+    border: 1px solid #419032;
     border-radius: 4px;
     cursor: pointer; 
     transition: 0.4s;
